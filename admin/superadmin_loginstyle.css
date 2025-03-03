@@ -1,0 +1,100 @@
+/* Cyberpunk Background */
+body {
+    background: linear-gradient(135deg, #0d0221, #311b92, #6a0080);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Glowing Effect */
+body::before {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.2), transparent);
+    z-index: -1;
+    animation: neonPulse 10s infinite alternate;
+}
+
+/* Neon Glow Animation */
+@keyframes neonPulse {
+    from { opacity: 0.5; transform: scale(1); }
+    to { opacity: 1; transform: scale(1.05); }
+}
+
+/* Cyberpunk Login Box */
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 50px rgba(255, 0, 255, 0.3);
+    text-align: center;
+    width: 450px;
+    backdrop-filter: blur(20px);
+    animation: floatUp 1.2s ease-in-out;
+}
+
+/* Smooth Floating Animation */
+@keyframes floatUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0px); }
+}
+
+/* Input Fields */
+.input-group {
+    position: relative;
+    margin: 30px 0;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: 2px solid rgba(255, 0, 255, 0.7);
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    font-size: 18px;
+}
+
+.input-group label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.3s ease-in-out;
+}
+
+/* Floating label effect */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -10px;
+    font-size: 14px;
+    color: #ff00ff;
+}
+
+/* Glowing Cyberpunk Button */
+.btn {
+    background: linear-gradient(45deg, #ff00ff, #6a0080);
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 25px #ff00ff;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px #ff00ff;
+}

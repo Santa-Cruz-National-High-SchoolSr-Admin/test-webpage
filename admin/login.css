@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 3D Neumorphic Form */
+form {
+    background: #ecf0f3;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 16px #b8c6db, -8px -8px 16px #ffffff;
+    width: 350px;
+    text-align: center;
+}
+
+/* Title */
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Fields with 3D effect */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #ecf0f3;
+    box-shadow: inset 4px 4px 8px #b8c6db, inset -4px -4px 8px #ffffff;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 3D Input Click Effect */
+input[type="text"]:focus, input[type="password"]:focus {
+    box-shadow: inset 2px 2px 5px #b8c6db, inset -2px -2px 5px #ffffff;
+}
+
+/* Submit Button with 3D Effect */
+input[type="submit"] {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px #b8c6db, -4px -4px 8px #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+input[type="submit"]:hover {
+    background: linear-gradient(145deg, #2980b9, #3498db);
+    transform: translateY(-2px);
+}
+
+/* Active (Click) Effect */
+input[type="submit"]:active {
+    box-shadow: inset 4px 4px 8px #b8c6db, inset -4px -4px 8px #ffffff;
+    transform: translateY(2px);
+}
+
+/* Links */
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
