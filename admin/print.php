@@ -244,10 +244,15 @@ $pdf->SetFont('Helvetica', 'B', 8);
 $pdf->Cell(187, 5, "If school will implement other distance learning modalities aside from face-to-face instruction, what would you prefer for your child?", 1, 1, 'C');
 
 $pdf->SetFont('Helvetica', '', 8);
-$pdf->Cell(187, 10, "Other Distance Learning modalities: " , 0,1, 'L');
+$pdf->Cell(187, 5, "Other Distance Learning modalities: " , 0,1, 'L');
 $pdf->Cell(187, 8, $student['distance_learning_modalities'], 0,1, 'L');
 
-$pdf->Ln(10); // Space before signature section
+
+$pdf->SetFont('Helvetica', 'B', 8);
+$pdf->Cell(60,3, "Choose all that apply:", 0, 1, 'L');
+$pdf->Cell(60, 3, "[ ] Modular (Print)            [ ] Online                                      [ ] Radio-Based Instruction                               [ ] Blended", 0, 1, 'L');
+$pdf->Cell(60, 3, "[ ] Modular (Digital)         [ ] Educational Television           [ ] Homeschooling", 0, 1, 'L');
+$pdf->Ln(20); // Space before signature section
 
 // Parent/Student Signature Section
 $pdf->SetFont('Helvetica', 'B', 8);

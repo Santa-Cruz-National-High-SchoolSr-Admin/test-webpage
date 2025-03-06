@@ -22,16 +22,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_section'])) {
     $stmt->bind_param("ssssss", $section_name, $grade_level, $teacher_name, $track, $strand, $section_code);
 
     if ($stmt->execute()) {
-        // Logic to assign students to the new section based on grade level and strand
-        $section_id = $stmt->insert_id; // Get the last inserted section ID
+        // Get the last inserted section ID
+        $section_id = $stmt->insert_id;
         
-        // Fetch students who have selected the same strand and have no section assigned
-        $students = $conn->query("SELECT student_id FROM students WHERE grade_level = '$grade_level' AND strand = '$strand' AND section_id IS NULL");
+        // Logic to assign students to the new section based on grade level and strand
+        $students = $conn->query("SELECT id FROM students WHERE grade_level = '$grade_level' AND strand = '$strand' AND section_id IS NULL");
         
         // Assign each student to the new section and update section_code
         while ($student = $students->fetch_assoc()) {
-            $student_id = $student['student_id'];
-            $conn->query("UPDATE students SET section_id = '$section_id', section_code = '$section_code' WHERE student_id = '$student_id'");
+            $student_id = $student['id'];
+            $conn->query("UPDATE students SET section_id = '$section_id', section_code = '$section_code' WHERE id = '$student_id'");
         }
         
         // Redirect to prevent form resubmission
@@ -60,7 +60,7 @@ if (isset($_GET['drop_student']) && is_numeric($_GET['drop_student'])) {
     $student_id = $_GET['drop_student'];
     
     // Use Prepared Statements to prevent SQL Injection
-    $stmt = $conn->prepare("DELETE FROM students WHERE student_id = ?");
+    $stmt = $conn->prepare("DELETE FROM students WHERE id = ?");
     $stmt->bind_param("i", $student_id);
 
     if ($stmt->execute()) {
@@ -71,8 +71,6 @@ if (isset($_GET['drop_student']) && is_numeric($_GET['drop_student'])) {
     }
 
     $stmt->close();
-} else {
-    echo "Invalid student ID.";
 }
 
 // Export data to Excel
@@ -81,7 +79,7 @@ if (isset($_GET['export'])) {
     header("Content-Disposition: attachment; filename=sections.xls");
 
     $output = fopen("php://output", "w");
-    fputcsv($output, ["Section ID", "Section Name", "Grade Level", "Teacher Name"]);
+    fputcsv($output, ["Section ID", "Section Name", "Grade Level", "Teacher Name", "Track", "Strand"]);
 
     $query = $conn->query("SELECT * FROM sections");
     while ($row = $query->fetch_assoc()) {

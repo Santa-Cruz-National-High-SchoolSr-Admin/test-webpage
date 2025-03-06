@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="LOGO STA. CRUZ.png" type="image/x-icon">
+</head>
+<body>  
+    <div class="main-content">
+        <form method="POST" action="login_process.php">
+            <h2>Admin Login</h2>
+            <div id="error-message"></div>
+            <input type="text" name="username" placeholder="Enter Username" required><br><br>
+            <input type="password" name="password" placeholder="Enter Password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

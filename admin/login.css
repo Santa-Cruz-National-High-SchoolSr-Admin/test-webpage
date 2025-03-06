@@ -9,71 +9,124 @@ body {
     margin: 0;
 }
 
+.sidebar {/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 200px;
+}
+
 /* 3D Neumorphic Form */
 form {
     background: #ecf0f3;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 8px 8px 16px #b8c6db, -8px -8px 16px #ffffff;
-    width: 350px;
+    padding: 60px;
+    border-radius: 40px;
+    box-shadow: 16px 16px 32px #b8c6db, -16px -16px 32px #ffffff;
+    width: 700px;
     text-align: center;
+    display: inline-block;
 }
 
 /* Title */
 h2 {
     color: #2c3e50;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 48px;
 }
 
 /* Input Fields with 3D effect */
 input[type="text"], input[type="password"] {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
+    padding: 24px;
+    margin: 20px 0;
     border: none;
-    border-radius: 10px;
-    font-size: 16px;
+    border-radius: 20px;
+    font-size: 32px;
     background: #ecf0f3;
-    box-shadow: inset 4px 4px 8px #b8c6db, inset -4px -4px 8px #ffffff;
+    box-shadow: inset 8px 8px 16px #b8c6db, inset -8px -8px 16px #ffffff;
     outline: none;
     transition: all 0.3s ease-in-out;
 }
 
 /* 3D Input Click Effect */
 input[type="text"]:focus, input[type="password"]:focus {
-    box-shadow: inset 2px 2px 5px #b8c6db, inset -2px -2px 5px #ffffff;
+    box-shadow: inset 4px 4px 10px #b8c6db, inset -4px -4px 10px #ffffff;
 }
 
 /* Submit Button with 3D Effect */
 input[type="submit"] {
     background: linear-gradient(145deg, #3498db, #2980b9);
     color: white;
-    padding: 12px;
+    padding: 24px;
     width: 100%;
     border: none;
-    border-radius: 10px;
-    font-size: 16px;
+    border-radius: 20px;
+    font-size: 32px;
     cursor: pointer;
-    box-shadow: 4px 4px 8px #b8c6db, -4px -4px 8px #ffffff;
+    box-shadow: 8px 8px 16px #b8c6db, -8px -8px 16px #ffffff;
     transition: all 0.3s ease-in-out;
 }
 
 /* Hover Effect */
 input[type="submit"]:hover {
     background: linear-gradient(145deg, #2980b9, #3498db);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
 }
 
 /* Active (Click) Effect */
 input[type="submit"]:active {
-    box-shadow: inset 4px 4px 8px #b8c6db, inset -4px -4px 8px #ffffff;
-    transform: translateY(2px);
+    box-shadow: inset 8px 8px 16px #b8c6db, inset -8px -8px 16px #ffffff;
+    transform: translateY(4px);
 }
 
 /* Links */
 p {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 a {
@@ -81,9 +134,137 @@ a {
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
+    font-size: 24px;
 }
 
 a:hover {
     text-decoration: underline;
     color: #2980b9;
+}
+
+#error-message {
+    color: red;
+    margin-bottom: 30px;
+    display: none;
+    font-size: 24px;
+}
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* 3D Neumorphic Form */
+form {
+    background: #ecf0f3;
+    padding: 60px;
+    border-radius: 40px;
+    box-shadow: 16px 16px 32px #b8c6db, -16px -16px 32px #ffffff;
+    width: 700px;
+    text-align: center;
+}
+
+/* Title */
+h2 {
+    color: #2c3e50;
+    margin-bottom: 40px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 48px;
+}
+
+/* Input Fields with 3D effect */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 24px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 20px;
+    font-size: 32px;
+    background: #ecf0f3;
+    box-shadow: inset 8px 8px 16px #b8c6db, inset -8px -8px 16px #ffffff;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 3D Input Click Effect */
+input[type="text"]:focus, input[type="password"]:focus {
+    box-shadow: inset 4px 4px 10px #b8c6db, inset -4px -4px 10px #ffffff;
+}
+
+/* Submit Button with 3D Effect */
+input[type="submit"] {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+    color: white;
+    padding: 24px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    box-shadow: 8px 8px 16px #b8c6db, -8px -8px 16px #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+input[type="submit"]:hover {
+    background: linear-gradient(145deg, #2980b9, #3498db);
+    transform: translateY(-4px);
+}
+
+/* Active (Click) Effect */
+input[type="submit"]:active {
+    box-shadow: inset 8px 8px 16px #b8c6db, inset -8px -8px 16px #ffffff;
+    transform: translateY(4px);
+}
+
+/* Links */
+p {
+    margin-top: 20px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 24px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+#error-message {
+    color: red;
+    margin-bottom: 30px;
+    display: none;
+    font-size: 24px;
 }

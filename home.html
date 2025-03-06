@@ -13,286 +13,312 @@
 </head>
 
 <body>
- 
-    <!-- Navigation -->
-    <nav>
-        <img src="image/SCNHS.png" alt="">
-        <div class="navigation">
-             <ul>
-                <i id="menu-close" class="fas fa-times"></i>
-                <li><a class="active" href="home.html">Home</a></li>
-                <li><a href="admin/login.php" class="admin-btn">Admin Login</a></li> 
-                <li><a href="#about">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="#strand">Strand</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="online_registration.html" class="register-btn">Online Registration</a></li>
-             </ul>
-        </div>  
-    </nav>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
 
-    <!-- Home -->
+    <!-- Sidebar Toggle Button -->
+    <div id="sidebar-toggle"><i class="fas fa-bars"></i></div>
 
-    <section id="home" style="background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('image/bg.png') no-repeat center center; background-size: cover;">
-        <h2>SANTA CRUZ NATIONAL HIGH SCHOOL</h2>
-        <p>Santa Cruz National High School serves as a threshold to the limitless opportunities to its students. It is an emplacement where improvements and breakthroughs manifest. In short, SCNHS is a place for the boundless possibilities of the future.</p>
-      <div class="btn">
-         <a class="blue" href="#">Learn More</a>
-         <a class="yellow" href="strand.html">Visit Strand</a>
-        </div>    
-    </section>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a class="active" href="home.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="admin/login.html" class="admin-btn"><i class="fas fa-user-shield"></i> Admin Login</a></li>
+            <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+            <li><a href="#strand"><i class="fas fa-book"></i> Strand</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="online_registration.html" class="register-btn"><i class="fas fa-clipboard-list"></i> Online Registration</a></li>
+        </ul>
+    </div>
 
-    <!-- Add this new About section after Home and before Features -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h1>About SCNHS</h1>
-                    <p class="highlight">Excellence in Education Since 1969</p>
-                    <p>Santa Cruz National High School (SCNHS) is a prestigious public secondary educational institution located in Santa Cruz, Davao Del Sur. For over five decades, we have been dedicated to providing quality education and shaping the future leaders of Mindanao and our nation.</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <span class="stat-number">5</span>
-                            <span class="stat-label">Years of Excellence</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">1000+</span>
-                            <span class="stat-label">Students</span>
-                        </div>      
-                        <div class="stat-item">
-                            <span class="stat-number">60+</span>
-                            <span class="stat-label">Expert Teachers</span>
-                        </div>
-                    </div>
-                    <div class="about-buttons">
-                        <a href="#" class="btn-learn">Learn More</a>
-                        <a href="#strand" class="btn-programs">Our Programs</a>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <img src="image/bg.png" alt="SCNHS Campus">
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Home -->
 
-    <!-- features -->
-    
-    <section id="features">
-        <h1>Awesome Features</h1>
-        <p>Replenish man have thing gatherring ligh yielding shall you</p>
-        <div class="fea-base">
-            <div class="fea-box">
-                <i class="fa fa-certificate"></i>
-                <h2>National Certificate II</h2>
-                <p>A National Certificate (NC II) will be isifications at the official website of TESDA.</p>
-            </div>
-            <div class="fea-box">
-                <i class="fa fa-graduation-cap"></i>
-                <h2>Amazing Learning Institution</h2>
-                <p>Learning Instis for the achievement of competencies in line with nationally recognized standards</p>
-            </div>
-            <div class="fea-box">
-                <i class="fa fa-users"></i>
-                <h2>Friendly Society</h2>
-                <p>A Friendly = of a body of people who join together </p>
-            </div>
-        </div>
-    </section>
-
-     <!-- Strand -->
-    <section id="strand" class="section">
-       <h1>Our Strand</h1>
-       <p>"If we teach today as we taught yesterday, We rob our Children of tomorrow." – John Dewey</p>
-       <div class="strand-box">
-          <div class="strand">
-             <img src="image/stem.jpg" alt="">
-             <div class="details">
-                <span>Updated 08/10/23</span>
-                <h3>Science, Technology, Engineering, and Mathematics(STEM)</h3>
-                
-             </div>
-          </div>
-
-            <div class="strand">
-                <img src="image/Humss.jpg" alt="">
-                <div class="details">
-                    <span>Updated 08/10/23</span>
-                 <h3>Humanities and Social Sciences (HUMSS)</h3>
-                
-                </div>
-            </div>
-
-            <div class="strand">
-                <img src="image/abm.jpg" alt="">
-                <div class="details">
-                    <span>Updated 08/10/23</span>
-                    <h3>Accountancy, Business and Management(ABM)</h3>
-                </div>
-            </div>
-
-            <div class="strand">
-                <img src="image/gas.jpg" alt="">
-                <div class="details">
-                    <span>Updated 08/10/23</span>
-                    <h3>General Academic Strand(GAS)</h3>   
-                </div>
+        <section id="home" style="background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('image/bg.png') no-repeat center center; background-size: cover;">
+            <h2>SANTA CRUZ NATIONAL HIGH SCHOOL</h2>
+            <p>Santa Cruz National High School serves as a threshold to the limitless opportunities to its students. It is an emplacement where improvements and breakthroughs manifest. In short, SCNHS is a place for the boundless possibilities of the future.</p>
+          <div class="btn">
+             <a class="blue" href="#">Learn More</a>
+             <a class="yellow" href="strand.html">Visit Strand</a>
             </div>    
+        </section>
 
-            <div class="strand">
-                <img src="image/css_logo_test__d_by_questlog_d7r1ju6-fullview.png" alt="">
-                <div class="details">
-                    <span>Updated 02/26/25</span>
-                    <h3>Computer System Servicing (CSS)</h3>
+        <!-- Add this new About section after Home and before Features -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h1>About SCNHS</h1>
+                        <p class="highlight">Excellence in Education Since 1969</p>
+                        <p>Santa Cruz National High School (SCNHS) is a prestigious public secondary educational institution located in Santa Cruz, Davao Del Sur. For over five decades, we have been dedicated to providing quality education and shaping the future leaders of Mindanao and our nation.</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Years of Excellence</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">1000+</span>
+                                <span class="stat-label">Students</span>
+                            </div>      
+                            <div class="stat-item">
+                                <span class="stat-number">60+</span>
+                                <span class="stat-label">Expert Teachers</span>
+                            </div>
+                        </div>
+                        <div class="about-buttons">
+                            <a href="#" class="btn-learn">Learn More</a>
+                            <a href="#strand" class="btn-programs">Our Programs</a>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="image/bg.png" alt="SCNHS Campus">
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="strand">
-                <img src="image/jong000-180829055917-thumbnail.webp" alt="">
-                <div class="details">
-                    <span>Updated 02/26/25</span>
-                    <h3>Bread and Pastry Production (BPP)</h3>
-                </div>
-            </div>
-
-            <div class="strand">
-                <img src="image/GVSU_Badge_Food_and_Beverage.png" alt="">
-                <div class="details">   
-                    <span>Updated 02/26/25</span>
-                    <h3>Food and Beverage Production (FBP)</h3>
-                </div>
-            </div>
-
-            <div class="strand">
-                <img src="image/Learn-the-Basics-of-Home-Electrical-Wiring-CoyneCollege-scaled.jpeg" alt="">
-                <div class="details">
-                    <span>Updated 02/26/25</span>
-                    <h3>Electrical Installation and Maintenance (EIM)</h3>
-                </div>
-            </div>
-
-            <div class="strand">
-                <img src="image/Shielded_Metal_Arc_Welding_.jpg" alt="">
-                <div>
-                    <span>Updated 02/26/25</span>
-                    <h3>Shielded Metal Arc Welding (SMAW)</h3>
-                </div>
-            </div>
-
-            <div class="strand">
-                <img src="image/2021511.jpg" alt="">
-                <div class="details">
-                    <span>Updated 02/26/25</span>
-                    <h3>Caregiving</h3>
-                </div>
-
-            </div>
-       </div>
-    </section>
-
-     <!-- Registration -->
-     
-    </section>
-      
-    <!-- Profiles -->
-    
-
-    <footer>
-        <div class="footer-col">
-            <h3>Top Product</h3>
-            <li>Manage Reputaion</li>
-            <li>Power Tools</li>
-            <li>Managed website</li>
-            <li>Marketing Service</li>
-        </div>
-        <div class="footer-col">
-            <h3>Quick Links</h3>
-            <li>Brand Asset</li>
-            <li>Investor Relation</li>
-            <li>Term Of Service</li>
-            <li>Jobs</li>
-        </div>
-        <div class="footer-col">
-            <h3>Features</h3>
-            <li>Manage Reputaion</li>
-            <li>Power Tools</li>
-            <li>Manageed website</li>
-            <li>Marketing Service</li>
-        </div>
-        <div class="footer-col">
-            <h3>Resources</h3>
-            <li>Guides</li>
-            <li>Research</li>
-            <li>Expert</li>
-            <li>Marketing Service</li>
-        </div>
+        <!-- features -->
         
-        <div class="footer-col">
-            <h3>Newsletter</h3>
-            <p>You can trust us. We only send promo offers.</p>
-            <div class="continue">
-                <input type="text" name="" placeholder="Your Email Address" id="">
-                <a class="yellow" href="#">CONTINUE</a>
+        <section id="features">
+            <h1>Awesome Features</h1>
+            <p>Replenish man have thing gatherring ligh yielding shall you</p>
+            <div class="fea-base">
+                <div class="fea-box">
+                    <i class="fa fa-certificate"></i>
+                    <h2>National Certificate II</h2>
+                    <p>A National Certificate (NC II) will be isifications at the official website of TESDA.</p>
+                </div>
+                <div class="fea-box">
+                    <i class="fa fa-graduation-cap"></i>
+                    <h2>Amazing Learning Institution</h2>
+                    <p>Learning Instis for the achievement of competencies in line with nationally recognized standards</p>
+                </div>
+                <div class="fea-box">
+                    <i class="fa fa-users"></i>
+                    <h2>Friendly Society</h2>
+                    <p>A Friendly = of a body of people who join together </p>
+                </div>
             </div>
-        </div>
+        </section>
+
+         <!-- Strand -->
+        <section id="strand" class="section">
+           <h1>Our Strand</h1>
+           <p>"If we teach today as we taught yesterday, We rob our Children of tomorrow." – John Dewey</p>
+           <div class="strand-box">
+              <div class="strand">
+                 <img src="image/stem.jpg" alt="">
+                 <div class="details">
+                    <span>Updated 08/10/23</span>
+                    <h3>Science, Technology, Engineering, and Mathematics(STEM)</h3>
+                    
+                 </div>
+              </div>
+
+                <div class="strand">
+                    <img src="image/Humss.jpg" alt="">
+                    <div class="details">
+                        <span>Updated 08/10/23</span>
+                     <h3>Humanities and Social Sciences (HUMSS)</h3>
+                    
+                    </div>
+                </div>
+
+                <div class="strand">
+                    <img src="image/abm.jpg" alt="">
+                    <div class="details">
+                        <span>Updated 08/10/23</span>
+                        <h3>Accountancy, Business and Management(ABM)</h3>
+                    </div>
+                </div>
+
+                <div class="strand">
+                    <img src="image/gas.jpg" alt="">
+                    <div class="details">
+                        <span>Updated 08/10/23</span>
+                        <h3>General Academic Strand(GAS)</h3>   
+                    </div>
+                </div>    
+
+                <div class="strand">
+                    <img src="image/css_logo_test__d_by_questlog_d7r1ju6-fullview.png" alt="">
+                    <div class="details">
+                        <span>Updated 02/26/25</span>
+                        <h3>Computer System Servicing (CSS)</h3>
+                    </div>
+                </div>
+
+                <div class="strand">
+                    <img src="image/jong000-180829055917-thumbnail.webp" alt="">
+                    <div class="details">
+                        <span>Updated 02/26/25</span>
+                        <h3>Bread and Pastry Production (BPP)</h3>
+                    </div>
+                </div>
+
+                <div class="strand">
+                    <img src="image/GVSU_Badge_Food_and_Beverage.png" alt="">
+                    <div class="details">   
+                        <span>Updated 02/26/25</span>
+                        <h3>Food and Beverage Production (FBP)</h3>
+                    </div>
+                </div>
+
+                <div class="strand">
+                    <img src="image/Learn-the-Basics-of-Home-Electrical-Wiring-CoyneCollege-scaled.jpeg" alt="">
+                    <div class="details">
+                        <span>Updated 02/26/25</span>
+                        <h3>Electrical Installation and Maintenance (EIM)</h3>
+                    </div>
+                </div>
+
+                <div class="strand">
+                    <img src="image/Shielded_Metal_Arc_Welding_.jpg" alt="">
+                    <div>
+                        <span>Updated 02/26/25</span>
+                        <h3>Shielded Metal Arc Welding (SMAW)</h3>
+                    </div>
+                </div>
+
+                <div class="strand">
+                    <img src="image/2021511.jpg" alt="">
+                    <div class="details">
+                        <span>Updated 02/26/25</span>
+                        <h3>Caregiving</h3>
+                    </div>
+
+                </div>
+           </div>
+        </section>
+
+         <!-- Registration -->
+         
+        </section>
+          
+        <!-- Profiles -->
         
-        <div class="copyright">
-            <p>Copyright @2025 All Rights Reserved | This Website make By:Adonie Jay Batcheril & ICT Department</p>
-            <div class="pro-link">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-linkedin-in"></i>
+
+        <footer>
+            <div class="footer-col">
+                <h3>Top Product</h3>
+                <li>Manage Reputaion</li>
+                <li>Power Tools</li>
+                <li>Managed website</li>
+                <li>Marketing Service</li>
             </div>
-        </div>
-    </footer>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <li>Brand Asset</li>
+                <li>Investor Relation</li>
+                <li>Term Of Service</li>
+                <li>Jobs</li>
+            </div>
+            <div class="footer-col">
+                <h3>Features</h3>
+                <li>Manage Reputaion</li>
+                <li>Power Tools</li>
+                <li>Manageed website</li>
+                <li>Marketing Service</li>
+            </div>
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <li>Guides</li>
+                <li>Research</li>
+                <li>Expert</li>
+                <li>Marketing Service</li>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>You can trust us. We only send promo offers.</p>
+                <div class="continue">
+                    <input type="text" name="" placeholder="Your Email Address" id="">
+                    <a class="yellow" href="#">CONTINUE</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>Copyright @2025 All Rights Reserved | This Website make By:Adonie Jay Batcheril & ICT Department</p>
+                <div class="pro-link">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+        </footer>
+    </div>
 
 <script>
-// Add smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    // Sidebar toggle functionality
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const mainContent = document.querySelector('.main-content');
+
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        mainContent.classList.toggle('active');
+    });
+
+    // Add smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
-});
 
-// Add reveal on scroll
-const reveal = () => {
-    const reveals = document.querySelectorAll('.fea-box, .strand, .profile');
-    
-    reveals.forEach(element => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
+    // Add reveal on scroll
+    const reveal = () => {
+        const reveals = document.querySelectorAll('.fea-box, .strand, .profile');
         
-        if (elementTop < windowHeight - elementVisible) {
-            element.classList.add('active');
-        }
+        reveals.forEach(element => {
+            const windowHeight = window.innerHeight;
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', reveal);
+
+    // Add dynamic counter for stats
+    const animateValue = (obj, start, end, duration) => {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // Initialize counters when in view
+    const counters = document.querySelectorAll('.star span');
+    counters.forEach(counter => {
+        animateValue(counter, 0, parseInt(counter.innerHTML.match(/\d+/)[0]), 2000);
     });
-}
 
-window.addEventListener('scroll', reveal);
-
-// Add dynamic counter for stats
-const animateValue = (obj, start, end, duration) => {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.innerHTML = Math.floor(progress * (end - start) + start);
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
-    };
-    window.requestAnimationFrame(step);
-}
-
-// Initialize counters when in view
-const counters = document.querySelectorAll('.star span');
-counters.forEach(counter => {
-    animateValue(counter, 0, parseInt(counter.innerHTML.match(/\d+/)[0]), 2000);
-});
+    // Hide loading screen after page load
+    window.addEventListener('load', () => {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500); // Match the transition duration in CSS
+    });
 </script>
 </body>
 </html>
