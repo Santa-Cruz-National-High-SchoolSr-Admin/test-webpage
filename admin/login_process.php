@@ -1,8 +1,5 @@
 <?php
-session_start();
-require_once 'config.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     
@@ -15,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows === 1) {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
+            session_start();
             $_SESSION['admin_logged_in'] = true;
             $_SESSION['admin_username'] = $username;
             $_SESSION['login_time'] = time(); // Track login time
@@ -23,7 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     
-    header("Location: login.html?error=1");
+    header("Location: login.html?error=invalid_credentials");
+    exit();
+} else {
+    // Method not allowed
+    header("HTTP/1.1 405 Method Not Allowed");
     exit();
 }
 ?>
