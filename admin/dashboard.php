@@ -2,8 +2,8 @@
 session_start();
 
 // Redirect to login page if the admin is NOT logged in
-if (!isset($_SESSION['admin'])) {
-    header("Location: admin/login.php");
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header("Location: login.html");
     exit();
 }
 
@@ -11,21 +11,24 @@ if (!isset($_SESSION['admin'])) {
 if (isset($_SESSION['login_time']) && (time() - $_SESSION['login_time'] > 900)) {
     session_unset();
     session_destroy();
-    header("Location: login.php");
+    header("Location: login.html");
     exit();
 } else {
     $_SESSION['login_time'] = time(); // Reset session time
 }
 
-// Connect to the database
-$conn = new mysqli("localhost", "root", "", "enrollment_db");
+require_once 'config.php'; // Use existing database connection
 
+// Check if the connection was successful
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 // Fetch student data
 $stmt = $conn->prepare("SELECT lrn, first_name, last_name, grade, track, strand, section FROM students ORDER BY created_at DESC");
+if ($stmt === false) {
+    die("Error preparing statement: " . $conn->error);
+}
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -38,6 +41,7 @@ $result = $stmt->get_result();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="LOGO STA. CRUZ.png" type="image/x-icon">
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
     <style>
         /* Base Variables */
         :root {
@@ -230,7 +234,7 @@ $result = $stmt->get_result();
 <body>
 
     <div class="sidebar">
-        <h2>Welcome, <?php echo $_SESSION['admin']; ?> 👤</h2>
+        <h2>Welcome, <?php echo htmlspecialchars($_SESSION['admin_username']); ?> 👤</h2>
         <a href="logout.php">Logout</a>
         <a href="section.php">Sections</a>
         <a href="superadmin_login.php">SuperIdol</a>
