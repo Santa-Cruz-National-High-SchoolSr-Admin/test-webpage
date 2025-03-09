@@ -1,10 +1,19 @@
 <?php
+// Enable error logging
+ini_set('log_errors', 1);
+ini_set('error_log', '/workspaces/test-webpage/admin/error_log.txt');
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    
+
     $sql = "SELECT * FROM admin_users WHERE username = ?";
     $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        error_log("Prepare failed: (" . $conn->errno . ") " . $conn->error);
+        header("Location: login.html?error=server_error");
+        exit();
+    }
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -18,7 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['login_time'] = time(); // Track login time
             header("Location: dashboard.php");
             exit();
+        } else {
+            error_log("Password verification failed for user: $username");
         }
+    } else {
+        error_log("No user found with username: $username");
     }
     
     header("Location: login.html?error=invalid_credentials");
