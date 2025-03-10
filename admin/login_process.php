@@ -8,7 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Database connection
-    // ...existing code...
+    $conn = new mysqli('localhost', 'username', 'password', 'database');
+    if ($conn->connect_error) {
+        error_log("Connection failed: " . $conn->connect_error);
+        header("Location: login.html?error=server_error");
+        exit();
+    }
     
     $sql = "SELECT * FROM admin_users WHERE username = ?";
     $stmt = $conn->prepare($sql);
@@ -29,6 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['admin_username'] = $username;
             $_SESSION['login_time'] = time(); // Track login time
             header("Location: dashboard.php");
+            $stmt->close();
+            $conn->close();
             exit();
         } else {
             error_log("Password verification failed for user: $username");
@@ -37,6 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         error_log("No user found with username: $username");
     }
     
+    $stmt->close();
+    $conn->close();
     header("Location: login.html?error=invalid_credentials");
     exit();
 } else {
